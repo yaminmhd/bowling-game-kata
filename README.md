@@ -19,3 +19,14 @@ for that frame is the value of the next two balls rolled.
 In the tenth frame a player who rolls a spare or strike is allowed to roll the extra
 balls to complete the frame.  However no more than three balls can be rolled in
 tenth frame.
+
+---
+
+Starting requirements
+
+Write a class `Game` that has two methods
+
+* `roll(pins)` is called each time the player rolls a ball. The argument is the number of pins knocked down.
+* `calculateScore()` returns the total score for that game.
+
+Attempt this Kata using TDD
