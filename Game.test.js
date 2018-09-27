@@ -1,17 +1,21 @@
 const Game = require('./Game');
 
-test('it should be able to manage a gutter game', () => {
+beforeEach(()=>{
   game = new Game();
-  for(let i = 0; i < 20; i++){
-    game.roll(0);
+})
+
+const rollMultipleRounds = (numberOfTimesBallRolled, pinsHits) => {
+  for(let i = 0; i< numberOfTimesBallRolled; i++){
+    game.roll(pinsHits);
   }
+}
+
+test('it should be able to manage a gutter game', () => {
+  rollMultipleRounds(20,0);
   expect(game.calculateScore()).toEqual(0);
 });
 
 test('it should be able to manage a game with all ones ', () => {
-  game = new Game();
-  for(let i = 0; i< 20; i++){
-    game.roll(1);
-  }
+  rollMultipleRounds(20,1);
   expect(game.calculateScore()).toEqual(20);
 });
