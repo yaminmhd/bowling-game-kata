@@ -35,3 +35,8 @@ test("it should be able to manage a game wiht one strike", () => {
   rollMultipleRounds(16, 0);
   expect(game.calculateScore()).toEqual(26);
 });
+
+test('should test for perfect game', () => {
+  rollMultipleRounds(12,10);
+  expect(game.calculateScore()).toEqual(300);
+});
