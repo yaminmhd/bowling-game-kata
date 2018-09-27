@@ -19,3 +19,11 @@ test('it should be able to manage a game with all ones ', () => {
   rollMultipleRounds(20,1);
   expect(game.calculateScore()).toEqual(20);
 });
+
+test('it should be able to manage a game with one spare', () => {
+  game.roll(5);
+  game.roll(5);
+  game.roll(3);
+  rollMultipleRounds(17,0);
+  expect(game.calculateScore()).toEqual(16)
+});
